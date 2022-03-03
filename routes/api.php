@@ -19,7 +19,7 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->get('/daily_plan', [DailyPlanController::class, 'getOrCreate']);
 
-Route::middleware('auth:sanctum')->prefix('/daily_plan/{daily_plan_id}/task/{task_id}')->group(function() {
+Route::middleware('auth:sanctum')->prefix('/daily_plan/{dailyPlanId}/task/{taskId}')->group(function() {
     Route::put('complete', [DailyPlanController::class, 'taskComplete']);
     Route::put('change', [DailyPlanController::class, 'taskChange']);
 });
