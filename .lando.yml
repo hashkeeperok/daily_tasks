@@ -1,0 +1,14 @@
+name: daily-tasks
+recipe: laravel
+config:
+  php: '8.0'
+  via: nginx
+  xdebug: true
+  webroot: public
+services:
+  phpmyadmin:
+    type: phpmyadmin
+    overrides:
+      environment:
+        PMA_USER: laravel
+        PMA_PASSWORD: laravel
